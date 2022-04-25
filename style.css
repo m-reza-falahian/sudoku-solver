@@ -1,0 +1,68 @@
+* {
+    font-family: 'Merriweather', serif;
+    color: white;
+}
+
+body {
+    display: flex;
+    flex-flow: column;
+    background-color: #121213;
+}
+
+.sudoku-table {
+    margin: auto;
+    display: inline-grid;
+    grid-template-columns: repeat(3, auto);
+    background-color: #3a3a3c;
+    padding: 1px;
+    grid-gap: 1px;
+    width: auto;
+    height: auto;
+    border-radius: 5px;
+}
+
+.sudoku-section {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    background-color: #3a3a3c;
+    grid-gap: 2px;
+    padding: 2px;
+}
+
+.sudoku-in {
+    background-color: #121213;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: none;
+    border-radius: 5px;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+.items{
+    display: flex;
+    justify-content: center;
+    margin: 2rem;
+
+}
+.button{
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 3rem;
+    color: white;
+    background-color: #33bf1e;;
+    width: fit-content;
+    padding: .75rem 1.5rem;
+}
