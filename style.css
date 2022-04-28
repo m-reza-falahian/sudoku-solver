@@ -7,6 +7,7 @@ body {
     display: flex;
     flex-flow: column;
     background-color: #121213;
+    margin-top: 3rem;
 }
 
 .sudoku-table {
@@ -50,19 +51,104 @@ input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
 }
 
-.items{
+.items {
     display: flex;
     justify-content: center;
     margin: 2rem;
 
 }
-.button{
+
+.button {
     font-size: 1rem;
     font-weight: bold;
     border: none;
     border-radius: 3rem;
     color: white;
-    background-color: #33bf1e;;
+    background-color: #33bf1e;
     width: fit-content;
     padding: .75rem 1.5rem;
+}
+
+@media(min-width:3800px) {
+    .sudoku-table {
+        padding: 3px;
+        grid-gap: 3px;
+        border-radius: 15px;
+    }
+
+    .sudoku-section {
+        grid-gap: 6px;
+        padding: 6px;
+    }
+
+    .sudoku-in {
+        font-size: 6rem;
+        width: 7.5rem;
+        height: 7.5rem;
+        border-radius: 15px;
+    }
+
+    .items {
+        margin: 6rem;
+    }
+
+    .button {
+        font-size: 3rem;
+        border-radius: 9;
+        padding: 1.25rem 4.5rem;
+    }
+}
+
+@media(max-width:500px) {
+    .sudoku-section {
+        padding: 1px;
+    }
+
+    .sudoku-in {
+        font-size: 1.75rem;
+        width: 2.25rem;
+        height: 2.25rem;
+    }
+
+    .items {
+        margin: 1rem;
+    }
+
+    .button {
+        font-size: 1rem;
+        padding: .75rem 2rem;
+    }
+}
+
+@media(max-width:400px) {
+    .sudoku-in {
+        font-size: 1.5rem;
+        width: 1.75rem;
+        height: 1.75rem;
+    }
+
+    .items {
+        margin: 1rem;
+    }
+
+    .button {
+        font-size: 1rem;
+        padding: .5rem 2.25rem;
+    }
+}
+@media(max-width:300px) {
+    .sudoku-in {
+        font-size: 1rem;
+        width: 1rem;
+        height: 1rem;
+    }
+
+    .items {
+        margin: .75rem;
+    }
+
+    .button {
+        font-size: .75rem;
+        padding: .25rem 1.75rem;
+    }
 }
