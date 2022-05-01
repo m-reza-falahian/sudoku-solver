@@ -92,6 +92,23 @@ function test(i, j, num) {
     }
 }
 
+function check_table() {
+    for (i = 0; i <= 8; i++) {
+        for (j = 0; j <= 8; j++) {
+            if (!table[i][j] == 0) {
+                let num = table[i][j];
+                table[i][j] = 0;
+                if (!test(i, j, num)) {
+                    return false;
+                }
+                table[i][j] = num;
+                // console.log(test(i, j, num));
+            }
+        }
+    }
+    return true;
+}
+
 function find_first_empty() {
     for (let y = 0; y <= 8; y++) {
         for (let x = 0; x <= 8; x++) {
@@ -133,9 +150,13 @@ function solve() {
 
 function table_handler() {
     create_table_array();
-    solve();
-    // console.log(table);
-    create_array_table();
+    if (check_table()) {
+        solve();
+        document.getElementById("err").innerHTML = "";
+        create_array_table();
+    } else {
+        document.getElementById("err").innerHTML = "The table is wrong";
+    }
 }
 
 document.getElementById("solve").addEventListener("click", table_handler);
