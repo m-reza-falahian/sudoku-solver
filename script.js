@@ -95,12 +95,14 @@ function check_table() {
         for (j = 0; j <= 8; j++) {
             if (!table[i][j] == 0) {
                 let num = table[i][j];
+                let inp = document.getElementsByClassName("l" + (i + 1))[j];
                 table[i][j] = 0;
-                if (!test(i, j, num)) {
-                    document.getElementsByClassName("l" + (i + 1))[j].style.background = "rgb(208, 25, 25) none repeat scroll 0% 0%";
+                if (!test(i, j, num) || num < 1 || num > 9) {
+                    inp.style.background = "rgb(208, 25, 25) none repeat scroll 0% 0%";
                     return false;
                 }
                 table[i][j] = num;
+                inp.style.background = "#121213";
                 // console.log(test(i, j, num));
             }
         }
@@ -121,11 +123,12 @@ function find_first_empty() {
 
 function table_cleaner() {
     let inputs = document.getElementsByClassName("sudoku-in");
-    console.log(inputs);
+    // console.log(inputs);
     for (let i = 0; i <= 80; i++) {
         inputs[i].value = "";
         inputs[i].style.background = "#121213";
     }
+    document.getElementById("err").innerHTML = "";
 }
 
 function table_coloring() {
