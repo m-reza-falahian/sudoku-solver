@@ -31,7 +31,7 @@ function create_table_array() {
             Square[i][j] = sudoku[j].classList[2];
             if (value == "") {
                 table[i][j] = 0;
-                sudoku[j].style.background = "rgb(42, 142, 14) none repeat scroll 0% 0%";
+                sudoku[j].style.background = "rgb(26, 157, 21) none repeat scroll 0% 0%";
             } else {
                 table[i][j] = Number(value);
                 sudoku[j].style.background = "rgb(35, 40, 47) none repeat scroll 0% 0%";
@@ -99,6 +99,7 @@ function check_table() {
                 let num = table[i][j];
                 table[i][j] = 0;
                 if (!test(i, j, num)) {
+                    document.getElementsByClassName("l" + (i + 1))[j].style.background = "rgb(208, 25, 25) none repeat scroll 0% 0%";
                     return false;
                 }
                 table[i][j] = num;
@@ -120,6 +121,14 @@ function find_first_empty() {
     return false;
 }
 
+function table_cleaner() {
+    let inputs = document.getElementsByClassName("sudoku-in");
+    console.log(inputs);
+    for (let i = 0; i <= 80; i++) {
+        inputs[i].value = "";
+        inputs[i].style.background = "#121213";
+    }
+}
 
 function solve() {
     let i;
@@ -160,3 +169,4 @@ function table_handler() {
 }
 
 document.getElementById("solve").addEventListener("click", table_handler);
+document.getElementById("clear").addEventListener("click", table_cleaner);
