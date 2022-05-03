@@ -31,10 +31,8 @@ function create_table_array() {
             Square[i][j] = sudoku[j].classList[2];
             if (value == "") {
                 table[i][j] = 0;
-                sudoku[j].style.background = "rgb(26, 157, 21) none repeat scroll 0% 0%";
             } else {
                 table[i][j] = Number(value);
-                sudoku[j].style.background = "rgb(35, 40, 47) none repeat scroll 0% 0%";
             }
         }
 
@@ -130,6 +128,18 @@ function table_cleaner() {
     }
 }
 
+function table_coloring() {
+    for (let i = 0; i <= 8; i++) {
+        for (let j = 0; j <= 8; j++) {
+            if (table[i][j] == 0) {
+                document.getElementsByClassName("l" + (i + 1))[j].style.background = "rgb(26, 157, 21) none repeat scroll 0% 0%";
+            } else {
+                document.getElementsByClassName("l" + (i + 1))[j].style.background = "rgb(35, 40, 47) none repeat scroll 0% 0%";
+            }
+        }
+    }
+}
+
 function solve() {
     let i;
     let j;
@@ -160,6 +170,7 @@ function solve() {
 function table_handler() {
     create_table_array();
     if (check_table()) {
+        table_coloring();
         solve();
         document.getElementById("err").innerHTML = "";
         create_array_table();
