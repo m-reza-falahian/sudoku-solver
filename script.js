@@ -23,7 +23,7 @@ let Square = [
 ];
 
 
-function create_table_array() {
+function createTableArray() {
     for (let i = 0; i <= 8; i++) {
         for (let j = 0; j <= 8; j++) {
             let sudoku = document.getElementsByClassName('l' + (i + 1));
@@ -39,7 +39,7 @@ function create_table_array() {
     }
 }
 
-function create_array_table() {
+function createArrayTable() {
     for (let i = 0; i <= 8; i++) {
         for (let j = 0; j <= 8; j++) {
             let sudoku = document.getElementsByClassName('l' + (i + 1));
@@ -90,7 +90,7 @@ function test(i, j, num) {
     }
 }
 
-function check_table() {
+function checkTable() {
     for (i = 0; i <= 8; i++) {
         for (j = 0; j <= 8; j++) {
             if (!table[i][j] == 0) {
@@ -110,7 +110,7 @@ function check_table() {
     return true;
 }
 
-function find_first_empty() {
+function findFirstEmpty() {
     for (let y = 0; y <= 8; y++) {
         for (let x = 0; x <= 8; x++) {
             if (table[y][x] == 0) {
@@ -121,7 +121,7 @@ function find_first_empty() {
     return false;
 }
 
-function table_cleaner() {
+function tableCleaner() {
     let inputs = document.getElementsByClassName("sudoku-in");
     // console.log(inputs);
     for (let i = 0; i <= 80; i++) {
@@ -131,7 +131,7 @@ function table_cleaner() {
     document.getElementById("err").innerHTML = "";
 }
 
-function table_coloring() {
+function tableColoring() {
     for (let i = 0; i <= 8; i++) {
         for (let j = 0; j <= 8; j++) {
             if (table[i][j] == 0) {
@@ -146,10 +146,10 @@ function table_coloring() {
 function solve() {
     let i;
     let j;
-    if (find_first_empty()) {
-        // console.log(find_first_empty());
-        i = find_first_empty()[0];
-        j = find_first_empty()[1];
+    if (findFirstEmpty()) {
+        // console.log(findFirstEmpty());
+        i = findFirstEmpty()[0];
+        j = findFirstEmpty()[1];
     } else {
         return true;
     }
@@ -170,17 +170,17 @@ function solve() {
 
 }
 
-function table_handler() {
-    create_table_array();
-    if (check_table()) {
-        table_coloring();
+function tableHandler() {
+    createTableArray();
+    if (checkTable()) {
+        tableColoring();
         solve();
         document.getElementById("err").innerHTML = "";
-        create_array_table();
+        createArrayTable();
     } else {
         document.getElementById("err").innerHTML = "The table is wrong";
     }
 }
 
-document.getElementById("solve").addEventListener("click", table_handler);
-document.getElementById("clear").addEventListener("click", table_cleaner);
+document.getElementById("solve").addEventListener("click", tableHandler);
+document.getElementById("clear").addEventListener("click", tableCleaner);
