@@ -58,6 +58,12 @@ input[type=number]::-webkit-outer-spin-button {
     flex-flow: column;
 }
 
+.btns {
+    display: flex;
+    flex-flow: row;
+    margin: auto;
+}
+
 .button {
     font-size: 1rem;
     font-weight: bold;
@@ -68,13 +74,13 @@ input[type=number]::-webkit-outer-spin-button {
     width: fit-content;
     padding: .75rem 1.5rem;
     display: flex;
-    margin: auto;
 }
 
 #clear {
-    font-size: 1rem;
-    padding: .5rem 2rem;
-    margin: .5rem auto;
+    font-size: 1.5rem;
+    margin: .5rem .25rem;
+    padding: .5rem;
+    display: block;
 }
 
 .errs {
@@ -116,6 +122,10 @@ input[type=number]::-webkit-outer-spin-button {
         font-size: 3rem;
         border-radius: 9;
         padding: 1.25rem 4.5rem;
+    }
+
+    #clear{
+        font-size: 4rem;
     }
 }
 

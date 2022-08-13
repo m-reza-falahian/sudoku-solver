@@ -5,11 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>sudoku</title>
+    <meta name="theme-color" content="#3a3a3c">
+    <title>sudoku solver</title>
+    <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 </head>
 
 <body>
@@ -117,7 +120,7 @@
     <div class="items">
         <div class="btns">
             <input type="button" value="solve" class="button" id="solve">
-            <input type="button" value="clear" class="button" id="clear">
+            <i class="bi bi-eraser-fill button" id="clear"></i>
         </div>
         <div class="errs"><span class="error" id="err"></span></div>
     </div>

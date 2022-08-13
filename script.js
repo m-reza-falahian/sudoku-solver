@@ -184,3 +184,13 @@ function tableHandler() {
 
 document.getElementById("solve").addEventListener("click", tableHandler);
 document.getElementById("clear").addEventListener("click", tableCleaner);
+
+if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("./service-worker.js")
+        .then(register => {
+            console.log(register);
+        })
+        .catch(err => {
+            console.log(err);
+        })
+}
